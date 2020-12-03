@@ -1,0 +1,186 @@
+﻿<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
+    <title>3M合作伙伴授权证书查询</title>
+    <link href="./static/partners.css" rel="stylesheet" type="text/css">
+    <link href="./static/fuze.css" rel="stylesheet" type="text/css" media="print, screen">
+    <script src="./static/jquery-1.6.2.js"></script>
+    <script type="text/javascript">
+
+        var targetCode = 'zhPctl20201120030';
+
+        function validateForm() {
+            if ($("#anticodeId").val() == "") {
+                alert("请输入证书编号！");
+                return false;
+            }
+            var len = $("#anticodeId").val().length;
+            if (len > 50) {
+                alert("请输入正确的证书编号！");
+                return false;
+            }
+            var reg = /^[0-9a-zA-Z]*$/g;
+            if (!reg.test($("#anticodeId").val())) {
+                alert("请输入正确的证书编号！");
+                return false;
+            }
+
+            var id = $("#anticodeId").val();
+
+            if (id === targetCode) {
+                $("#result-wrap").html(`<table class="tbl">
+
+                    <tbody>
+                    <tr>
+                        <td class="blankTD" width="10%">&nbsp;</td>
+
+                        <td align="left">
+                            <font style="font-size: 16px;"><b>兹授权 <u>上海华鹿贸易有限公司</u>
+                                为 <u>汽车隔音降噪</u> 产品在中国大陆地区下述互联网络销售店的销售商</b></font>
+                            <br> <br>
+                            <b>
+                                <font style="font-size: 14px;">
+                                    销售平台：天猫<br><br>
+                                </font>
+
+
+                                <font style="font-size: 14px;">
+                                    网店名称：华鹿汽车用品专营店<br><br>
+                                    网店网址：https://hlqcyp.tmall.com<br><br>
+                                </font>
+
+                                <font style="font-size: 14px;">
+                                    授权期限：2020-11-20 至 2030-11-20<br><br>
+                                    证书编号：zhPctl20201120030
+                                </font>
+                            </b>
+                        </td>
+
+                        <td class="blankTD" width="10%">&nbsp;</td>
+                    </tr>
+
+
+                    </tbody>
+                </table><br><br>`);
+
+                $('#title').show();
+
+                return;
+            }
+            // return;
+
+            $("#result-wrap").html(`<table class="tbl">
+                <tbody>
+                <tr>
+                    <td align="center"><font style="font-size: 18px;"><b>编号为 ${id} 的证书不存在!</b>
+                    </font>
+                    </td>
+                </tr>
+                </tbody>
+            </table><br><br>`);
+
+        }
+
+        function resetForm() {
+            $("#anticodeId").val('');
+        }
+
+        function locationTop() {
+            if (top.location != self.location) {
+                top.location = self.location;
+                return false;
+            }
+            return true;
+        }
+
+        $(function () {
+            var winWidth = document.body.clientWidth
+
+            $("td.blankTD").each(function () {
+                if (winWidth < 700) {
+                    $(this).attr("width", "10%");
+                } else {
+                    $(this).attr("width", "30%");
+                }
+            });
+
+            $('#anticodeId').val(targetCode);
+
+
+            locationTop();
+        });
+    </script>
+</head>
+<body>
+<div style="text-align: center; width: 100%; margin: 0 auto 0 auto;">
+    <div style="width: 100%;text-align: center;">
+        <img width="100%" src="./static/Per_Banner.jpg"
+             style="height: auto; width: auto\9;max-width: 596px;max-height: 190px">
+    </div>
+
+    <br>
+
+    <div style="font-size: 2em;font-weight: bold;">
+        <h1 id="title" style="display: none">3M授权网店查询</h1>
+    </div>
+
+    <div style="height: 10px"></div>
+
+    <div style="text-align: center;">
+        <table class="tbl">
+            <tbody>
+            <tr>
+                <td align="center">
+                    证书编号：&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="anticode" id="anticodeId" type="text" size="20">
+                </td>
+            </tr>
+
+            <tr style="height: 10px"></tr>
+
+            <tr>
+                <td align="center">
+                    <input type="button" onclick="validateForm()" class="buttonPartners" value=" ">
+                    <input type="reset" onclick="resetForm()" class="buttonReset" value=" "></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <div style="height: 10px"></div>
+
+    <div id="result-wrap" style="min-height: 160px">
+
+    </div>
+
+</div>
+
+<!-- FOOTER : BEGIN -->
+<div class="MMM--theme-ft">
+    <div class="MMM--ftLogoLinks MMM--ftHasLogo MMM--ftSection">
+        <div class="MMM--ftLogo">
+            <a title="3M" href="http://www.3m.com/" target="_blank"><img alt="3M Logo"
+                                                                         src="./static/Logo_mobile_footer.jpg"></a>
+        </div>
+        <div class="MMM--ftLinkTM">
+            <div class="MMM--ftLegalPrivacy">
+                <a title="Legal" class="" href="http://www.3m.com.cn/3M/zh_CN/company-cn/legal-information/"
+                   target="_blank">法律声明</a>| <a title="Privacy" class=""
+                                                href="http://www.3m.com.cn/3M/zh_CN/company-cn/privacy-policy/"
+                                                target="_blank">隐私政策</a>
+            </div>
+            <span>© 2020. 版权所有
+				<a href="http://www.beian.miit.gov.cn/" title="_blank" target="_blank"
+                   rel="nofollow">沪ICP备08026742号-1</a>
+				（沪）-非经营性-2019-0035.</span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
